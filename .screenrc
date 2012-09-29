@@ -1,0 +1,6 @@
+hardstatus alwayslastline "%{rk} %H %{gk} %c %{yk} %Y-%M-%d %{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%?"
+# hardstatus alwayslastline "%{bw}%c:%s| %{bw}%w "
+# hardstatus alwayslastline "\033[44;37m %w"
+sorendition 02 40
+bindkey -k F2 next
+bindkey -k F1 prev 
