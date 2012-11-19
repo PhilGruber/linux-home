@@ -1,0 +1,22 @@
+source .mutt/credentials
+
+set record="=INBOX.Sent"
+set postponed="=INBOX.Drafts"
+
+unset imap_passive
+set header_cache="~/.mutt/header_cache"
+
+bind    index   G   imap-fetch-mail
+
+macro   index   F   <search>~F<enter>
+
+auto_view   text/html
+alternative_order   text/plain
+
+set sort='date'
+set strict_threads='yes'
+set sort_browser='reverse-date'
+set sort_aux='last-date-received'
+
+
+source .mutt/colours
