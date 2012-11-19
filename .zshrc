@@ -12,10 +12,14 @@ alias ls='ls --color=auto'
 alias ll="ls -lh"
 # alias less=/usr/share/vim/vim63/macros/less.sh
 
+if [[ "`whoami`" == "root" ]] {
+    alias as='apt-cache search'
+    alias ai='apt-get install'
+    alias ad='apt-cache show'
+}
+
 export LC_ALL=en_GB.utf-8
 export LANGUAGE=en_GB.utf-8
-
-path=($path /opt/openoffice.org1.9.73/program /opt/SJphoneLnx-277a /opt/netbeans-4.1/bin/ /opt/netbeans-4.1/ide5/ant/bin /opt/skype)
 
 # for "< file.txt"
 PAGER='less -M'
