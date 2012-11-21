@@ -75,9 +75,11 @@ bindkey "^[[A"  up-line-or-search       # cursor up
 precmd() {
 #    [[ -t 1 ]] || return
     case $TERM in
-	*xterm*|rxvt*) print -Pn "\e]2;[%n@%m] %~\a"
+	*xterm*|rxvt*)
+    print -Pn "\e]2;[%n@%m] %~\a"
 	;;
-	screen*) print -Pn "\"%~\134"
+	screen*)
+    print -Pn "\"%~\134"
 	;;
     esac
 }
