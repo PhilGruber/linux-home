@@ -6,10 +6,10 @@
 set modelines=0
 
 set tabstop=4
-set noexpandtab
 set et
 set sw=4
 set smarttab
+set noexpandtab
 
 
 syntax on
