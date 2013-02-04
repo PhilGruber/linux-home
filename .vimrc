@@ -9,6 +9,8 @@ set tabstop=4
 set et
 set sw=4
 set smarttab
+set noexpandtab
+
 
 syntax on
 
