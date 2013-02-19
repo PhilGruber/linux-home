@@ -35,6 +35,10 @@ if [ -f ~/.zsh/user ]; then
     source ~/.zsh/user
 fi
 
+if [ -f ~/.zsh/motd ]; then
+    source ~/.zsh/motd
+fi
+
 # autocompletion for networking tools
 compctl -k hosts telnet ftp ssh ping scp
 
