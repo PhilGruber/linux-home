@@ -7,7 +7,7 @@ unset imap_passive
 set header_cache="~/.mutt/header_cache"
 
 bind    index   G   imap-fetch-mail
-
+bind    index   *   flag-message
 macro   index   F   <search>~F<enter>
 
 auto_view   text/html
