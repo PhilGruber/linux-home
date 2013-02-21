@@ -35,6 +35,10 @@ if [ -f ~/.zsh/user ]; then
     source ~/.zsh/user
 fi
 
+if [ -f ~/.zsh/motd ]; then
+    source ~/.zsh/motd
+fi
+
 # autocompletion for networking tools
 compctl -k hosts telnet ftp ssh ping scp
 
@@ -75,9 +79,11 @@ bindkey "^[[A"  up-line-or-search       # cursor up
 precmd() {
 #    [[ -t 1 ]] || return
     case $TERM in
-	*xterm*|rxvt*) print -Pn "\e]2;[%n@%m] %~\a"
+	*xterm*|rxvt*)
+    print -Pn "\e]2;[%n@%m] %~\a"
 	;;
-	screen*) print -Pn "\"%~\134"
+	screen*)
+    print -Pn "\"%~\134"
 	;;
     esac
 }
@@ -99,6 +105,8 @@ cd .
 
 
 # cool colored prompt
-PS1="[%{$fg[red]%}%n%{$terminfo[sgr0]%}@%{$fg[blue]%}%m%{$terminfo[sgr0]%}] %~> " 
+if [[ `whoami` == 'root' ]]; then logincolor=red; else logincolor=green; fi
+if [[ $SSH_TTY == $TTY ]]; then hostcolor=red; else hostcolor=blue; fi
+PS1="[%{$fg[$logincolor]%}%n%{$terminfo[sgr0]%}@%{$fg[$hostcolor]%}%m%{$terminfo[sgr0]%}] %~> " 
 
 umask 022
