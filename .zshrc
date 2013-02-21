@@ -105,6 +105,8 @@ cd .
 
 
 # cool colored prompt
-PS1="[%{$fg[red]%}%n%{$terminfo[sgr0]%}@%{$fg[blue]%}%m%{$terminfo[sgr0]%}] %~> " 
+if [[ `whoami` == 'root' ]]; then logincolor=red; else logincolor=green; fi
+if [[ $SSH_TTY == $TTY ]]; then hostcolor=red; else hostcolor=blue; fi
+PS1="[%{$fg[$logincolor]%}%n%{$terminfo[sgr0]%}@%{$fg[$hostcolor]%}%m%{$terminfo[sgr0]%}] %~> " 
 
 umask 022
