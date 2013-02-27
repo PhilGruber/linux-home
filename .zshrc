@@ -1,5 +1,7 @@
 autoload colors; colors
 
+if [[ $SSH_TTY == $TTY ]]; then uptime; fi
+
 # better colors for ls
 if [ -f ~/.dircolors ]; then
     eval `dircolors -b ~/.dircolors`
