@@ -14,7 +14,7 @@ color message    blue         white
 color search     brightwhite  magenta
 color status     brightyellow blue
 color tree       red          white
-color normal     blue         white
+color normal     blue         default 
 color tilde      green        white
 color bold       brightyellow white
 color markers    red          white
