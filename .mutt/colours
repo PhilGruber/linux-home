@@ -5,19 +5,19 @@
 
 # Default colour definitions
 color hdrdefault black        cyan
-color quoted     red          white
-color signature  brightblack  white
+color quoted     red          default 
+color signature  brightblack  default
 color indicator  brightwhite  red
 color attachment black        green
-color error      red          white
-color message    blue         white
+color error      red          default
+color message    blue         default
 color search     brightwhite  magenta
 color status     brightyellow blue
-color tree       red          white
+color tree       red          default
 color normal     blue         default 
-color tilde      green        white
-color bold       brightyellow white
-color markers    red          white
+color tilde      green        default
+color bold       brightyellow default
+color markers    red          default
 
 # Colour definitions when on a mono screen
 mono bold      bold
@@ -31,9 +31,9 @@ color header red         cyan "^X-Virus-hagbard: .* FOUND"
 mono  header bold             "^(From|Subject|X-Junked-Because|X-Virus-hagbard):"
 
 # Colours for items in the index
-color index brightblue  white ~N
-color index brightgreen white "~N (~x hagbard\.davep\.org | ~h \"^In-[Rr]eply-[Tt]o: .*hagbard\.davep\.org\")"
-color index red         white ~F
+color index brightblue  default ~N
+color index brightgreen default "~N (~x hagbard\.davep\.org | ~h \"^In-[Rr]eply-[Tt]o: .*hagbard\.davep\.org\")"
+color index red         default ~F
 color index black       green ~T
 color index brightwhite black ~D
 mono  index bold              ~N
@@ -44,9 +44,9 @@ mono  index bold              ~D
 # Highlights inside the body of a message.
 
 # URLs
-color body brightblue  white "(http|https|ftp|news|telnet|finger)://[^ \">\t\r\n]*"
-color body brightblue  white "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
-color body brightblue  white "news:[^ \">\t\r\n]*"
+color body brightblue  default "(http|https|ftp|news|telnet|finger)://[^ \">\t\r\n]*"
+color body brightblue  default "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
+color body brightblue  default "news:[^ \">\t\r\n]*"
 mono  body bold              "(http|https|ftp|news|telnet|finger)://[^ \">\t\r\n]*"
 mono  body bold              "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
 mono  body bold              "news:[^ \">\t\r\n]*"
