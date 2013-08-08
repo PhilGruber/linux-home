@@ -37,7 +37,7 @@ autoload -U zcalc
 
 # load host-specific settings
 if [ -f ~/.zsh/user ]; then
-    source ~/.zsh/user
+    source ~/.zsh/user.zsh
 fi
 
 if [ -f ~/.zsh/motd ]; then
