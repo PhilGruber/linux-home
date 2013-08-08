@@ -34,7 +34,7 @@ autoload -U zcalc
       
 # load host-specific settings
 if [ -f ~/.zsh/user ]; then
-    source ~/.zsh/user
+    source ~/.zsh/user.zsh
 fi
 
 if [ -f ~/.zsh/motd ]; then
@@ -102,13 +102,17 @@ preexec() {
     esac
 }
 
-# to execute chpwd() on login
-cd .
-
-
 # cool colored prompt
 if [[ `whoami` == 'root' ]]; then logincolor=red; else logincolor=green; fi
 if [[ $SSH_TTY == $TTY ]]; then hostcolor=red; else hostcolor=blue; fi
 PS1="[%{$fg[$logincolor]%}%n%{$terminfo[sgr0]%}@%{$fg[$hostcolor]%}%m%{$terminfo[sgr0]%}] %~> " 
 
 umask 022
+
+setopt AUTO_CD
+
+mkcd() { mkdir $1; cd $1 }
+
+# to execute chpwd() on login
+cd .
+
