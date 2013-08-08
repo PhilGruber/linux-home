@@ -1,9 +1,6 @@
 autoload colors; colors
 
-# When connecting via ssh
-if [[ $SSH_TTY == $TTY ]]; then
-	uptime
-fi
+if [[ $SSH_TTY == $TTY ]]; then uptime; fi
 
 # better colors for ls
 if [ -f ~/.dircolors ]; then
@@ -34,7 +31,7 @@ export EDITOR=vim
 # new completion-mode
 autoload -U compinit; compinit
 autoload -U zcalc
-
+      
 # load host-specific settings
 if [ -f ~/.zsh/user ]; then
     source ~/.zsh/user
@@ -77,7 +74,7 @@ SAVEHIST=1000
 bindkey "$(echotc ku)" history-search-backward
 bindkey "$(echotc kd)" history-search-forward
 bindkey "^[[A"  up-line-or-search       # cursor up
-
+  
 
 # print path into title of ?term
 
@@ -112,6 +109,6 @@ cd .
 # cool colored prompt
 if [[ `whoami` == 'root' ]]; then logincolor=red; else logincolor=green; fi
 if [[ $SSH_TTY == $TTY ]]; then hostcolor=red; else hostcolor=blue; fi
-PS1="[%{$fg[$logincolor]%}%n%{$terminfo[sgr0]%}@%{$fg[$hostcolor]%}%m%{$terminfo[sgr0]%}] %~> "
+PS1="[%{$fg[$logincolor]%}%n%{$terminfo[sgr0]%}@%{$fg[$hostcolor]%}%m%{$terminfo[sgr0]%}] %~> " 
 
 umask 022
