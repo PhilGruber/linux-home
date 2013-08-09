@@ -33,7 +33,7 @@ autoload -U compinit; compinit
 autoload -U zcalc
       
 # load host-specific settings
-if [ -f ~/.zsh/user ]; then
+if [ -f ~/.zsh/user.zsh ]; then
     source ~/.zsh/user.zsh
 fi
 
