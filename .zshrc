@@ -111,7 +111,7 @@ umask 022
 
 setopt AUTO_CD
 
-mkcd() { mkdir $1; cd $1 }
+mkcd() { mkdir -p $1; cd $1 }
 
 # to execute chpwd() on login
 cd .
