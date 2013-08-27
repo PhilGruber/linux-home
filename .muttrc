@@ -1,4 +1,4 @@
-source .mutt/credentials
+source ~/.mutt/credentials
 
 set record="=INBOX.Sent"
 set postponed="=INBOX.Drafts"
@@ -20,4 +20,4 @@ set sort_aux='last-date-received'
 
 set index_format = "%4C %Z %{%b %d %R} %-20.20L (%6l) %s"
 
-source .mutt/colours
+source ~/.mutt/colours
