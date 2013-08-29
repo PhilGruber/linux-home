@@ -50,7 +50,7 @@ vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
 " Debian uses compressed helpfiles. We must inform vim that the main
 " helpfiles is compressed. Other helpfiles are stated in the tags-file.
-set helpfile=$VIMRUNTIME/doc/help.txt.gz
+" set helpfile=$VIMRUNTIME/doc/help.txt.gz
 
 if has("autocmd")
  " Enabled file type detection
@@ -68,10 +68,10 @@ augroup END
 
 " The following are commented out as they cause vim to behave a lot
 " different from regular vi. They are highly recommended though.
-"set showcmd		" Show (partial) command in status line.
+set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
-"set ignorecase		" Do case insensitive matching
-"set incsearch		" Incremental search
-"set autowrite		" Automatically save before commands like :next and :make
+set ignorecase		" Do case insensitive matching
+set incsearch		" Incremental search
+set autowrite		" Automatically save before commands like :next and :make
 
 :au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
