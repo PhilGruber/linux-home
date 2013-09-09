@@ -60,6 +60,15 @@ zstyle ':completion:*:cp:*' ignore-line yes
 zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion::complete:*' cache-path ~/.zsh/cache/$HOST
 
+# tuning for tools that I use a lot 
+zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*.(o|pdf|ps|aux)'
+compdef '_files -g "*.(pdf|ps)"' evince
+
+# better kill completion
+zstyle ':completion:*:processes' command 'ps -x'
+zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=31"
+zstyle ':completion:*:processes-names' command  'ps c -u ${USER} -o command | uniq'
+
 unsetopt promptcr
 setopt nocheckjobs             # don't warn me about bg processes when exiting
 setopt nohup                   # and don't kill them, either
