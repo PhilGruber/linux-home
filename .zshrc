@@ -12,6 +12,8 @@ fi
 # colored ls, ll
 alias ls='ls --color=auto'
 alias ll="ls -lh"
+
+alias grep='grep --colour'
 # alias less=/usr/share/vim/vim63/macros/less.sh
 
 if [[ "`whoami`" == "root" ]] {
