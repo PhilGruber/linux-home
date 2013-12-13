@@ -74,8 +74,9 @@ set ignorecase		" Do case insensitive matching
 set incsearch		" Incremental search
 set autowrite		" Automatically save before commands like :next and :make
 
-:au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
  " Custom extensions for syntax highlighting
 au BufNewFile,BufRead *.html.twig set filetype=html
+au BufNewFile,BufRead *.schema set filetype=javascript
 
