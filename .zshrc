@@ -14,7 +14,9 @@ alias ls='ls --color=auto'
 alias ll="ls -lh"
 
 alias grep='grep --colour'
-# alias less=/usr/share/vim/vim63/macros/less.sh
+
+alias gitk='gitk --date-order'
+
 
 if [[ "`whoami`" == "root" ]] {
     alias as='apt-cache search'
