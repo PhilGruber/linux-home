@@ -46,13 +46,13 @@ if [ -f ~/.zsh/motd ]; then
 fi
 
 # autocompletion for networking tools
-compctl -k hosts telnet ftp ssh ping scp
+compctl -k hosts telnet ftp ssh ping scp mosh
 
 zstyle ':completion:*:scp:*' group-order users files all-files hosts-domain hosts-host hosts-ipaddr
-zstyle ':completion:*:(ssh|scp):*:hosts-host' ignored-patterns '*.*' loopback localhost
-zstyle ':completion:*:(ssh|scp):*:hosts-domain' ignored-patterns '<->.<->.<->.<->' '^*.*' '*@*'
-zstyle ':completion:*:(ssh|scp):*:hosts-ipaddr' ignored-patterns '^<->.<->.<->.<->' '127.0.0.<->'
-zstyle -e ':completion:*:(ssh|scp):*' hosts 'reply=(
+zstyle ':completion:*:(ssh|scp|mosh):*:hosts-host' ignored-patterns '*.*' loopback localhost
+zstyle ':completion:*:(ssh|scp|mosh):*:hosts-domain' ignored-patterns '<->.<->.<->.<->' '^*.*' '*@*'
+zstyle ':completion:*:(ssh|scp|mosh):*:hosts-ipaddr' ignored-patterns '^<->.<->.<->.<->' '127.0.0.<->'
+zstyle -e ':completion:*:(ssh|scp|mosh):*' hosts 'reply=(
         ${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ,]*}//,/ }
         )'
 
