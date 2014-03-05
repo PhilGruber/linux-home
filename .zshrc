@@ -2,21 +2,22 @@ autoload colors; colors
 
 if [[ $SSH_TTY == $TTY ]]; then uptime; fi
 
-# better colors for ls
-if [ -f ~/.dircolors ]; then
-    eval `dircolors -b ~/.dircolors`
-#else
-#    eval `dircolors`
-fi
-
-# colored ls, ll
-#alias ls='ls --color=auto'
 alias ll="ls -lh"
-
 alias grep='grep --colour'
-
 alias gitk='gitk --date-order'
 
+if [[ "`uname`" == "Darwin" ]] {
+	# Mac OS
+} else {
+
+	alias ls='ls --color=auto'
+	if [ -f ~/.dircolors ]; then
+		eval `dircolors -b ~/.dircolors`
+	else
+	    eval `dircolors`
+	fi
+
+}
 
 if [[ "`whoami`" == "root" ]] {
     alias as='apt-cache search'
@@ -95,7 +96,7 @@ precmd() {
 #    [[ -t 1 ]] || return
     case $TERM in
 	*xterm*|rxvt*)
-    print -Pn "\e]2;[%n@%m] %~\a"
+    print -Pn "\e]4;[%n@%m] %~\a"
 	;;
 	screen*)
     print -Pn "\"%~\134"
@@ -118,6 +119,7 @@ preexec() {
 # cool colored prompt
 if [[ `whoami` == 'root' ]]; then logincolor=red; else logincolor=green; fi
 if [[ $SSH_TTY == $TTY ]]; then hostcolor=red; else hostcolor=blue; fi
+
 PS1="[%{$fg[$logincolor]%}%n%{$terminfo[sgr0]%}@%{$fg[$hostcolor]%}%m%{$terminfo[sgr0]%}] %~> " 
 
 umask 022
