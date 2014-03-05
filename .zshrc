@@ -8,6 +8,8 @@ alias gitk='gitk --date-order'
 
 if [[ "`uname`" == "Darwin" ]] {
 	# Mac OS
+	alias ls='ls -G'
+
 } else {
 
 	alias ls='ls --color=auto'
