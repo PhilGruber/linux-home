@@ -5,12 +5,12 @@ if [[ $SSH_TTY == $TTY ]]; then uptime; fi
 # better colors for ls
 if [ -f ~/.dircolors ]; then
     eval `dircolors -b ~/.dircolors`
-else
-    eval `dircolors`
+#else
+#    eval `dircolors`
 fi
 
 # colored ls, ll
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
 alias ll="ls -lh"
 
 alias grep='grep --colour'
