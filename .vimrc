@@ -11,6 +11,8 @@ set sw=4
 set smarttab
 set noexpandtab
 
+set number
+
 
 syntax on
 
