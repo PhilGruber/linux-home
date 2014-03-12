@@ -95,19 +95,24 @@ bindkey "^[[A"  up-line-or-search       # cursor up
 # print path into title of ?term
 
 precmd() {
-#    [[ -t 1 ]] || return
+#	when drawing the prompt
     case $TERM in
 	*xterm*|rxvt*)
-    print -Pn "\e]4;[%n@%m] %~\a"
+	if [[ "`uname`" == "Darwin" ]] {
+		print -Pn "]2;[%n@%m] %~\a"
+	} else {
+		print -Pn "\e]4;[%n@%m] %~\a"
+	}
 	;;
 	screen*)
+	echo 'screen'
     print -Pn "\"%~\134"
 	;;
     esac
 }
 
 preexec() {
-#    [[ -t 1 ]] || return
+#	before running a command 
     case $TERM in
 	*xterm*|rxvt*)
 	print -Pn "]2;$1\a"
