@@ -98,10 +98,11 @@ precmd() {
 #	when drawing the prompt
     case $TERM in
 	*xterm*|rxvt*)
+    if [[ $SSH_TTY == $TTY ]]; then hostfield="[%n@%m]"; else hostfield="[%n]"; fi
 	if [[ "`uname`" == "Darwin" ]] {
-		print -Pn "]2;[%n@%m] %~\a"
+		print -Pn "]2;$hostfield %~\a"
 	} else {
-		print -Pn "\e]4;[%n@%m] %~\a"
+		print -Pn "\e]4;$hostfield %~\a"
 	}
 	;;
 	screen*)
