@@ -38,7 +38,7 @@ export EDITOR=vim
 # new completion-mode
 autoload -U compinit; compinit
 autoload -U zcalc
-      
+
 # load host-specific settings
 if [ -f ~/.zsh/user.zsh ]; then
     source ~/.zsh/user.zsh
@@ -90,7 +90,7 @@ SAVEHIST=1000
 bindkey "$(echotc ku)" history-search-backward
 bindkey "$(echotc kd)" history-search-forward
 bindkey "^[[A"  up-line-or-search       # cursor up
-  
+
 
 # print path into title of ?term
 
@@ -106,14 +106,13 @@ precmd() {
 	}
 	;;
 	screen*)
-	echo 'screen'
     print -Pn "\"%~\134"
 	;;
     esac
 }
 
 preexec() {
-#	before running a command 
+#	before running a command
     case $TERM in
 	*xterm*|rxvt*)
 	print -Pn "]2;$1\a"
