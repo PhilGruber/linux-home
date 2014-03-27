@@ -100,9 +100,9 @@ precmd() {
 	*xterm*|rxvt*)
     if [[ $SSH_TTY == $TTY ]]; then hostfield="[%n@%m]"; else hostfield="[%n]"; fi
 	if [[ "`uname`" == "Darwin" ]] {
-		print -Pn "]2;$hostfield %~\a"
-	} else {
 		print -Pn "\e]4;$hostfield %~\a"
+	} else {
+		print -Pn "]2;$hostfield %~\a"
 	}
 	;;
 	screen*)
