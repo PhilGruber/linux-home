@@ -45,13 +45,8 @@ export EDITOR=vim
 autoload -U compinit; compinit
 autoload -U zcalc
 
-# load host-specific settings
-if [ -f ~/.zsh/user.zsh ]; then
-    source ~/.zsh/user.zsh
-fi
-
-if [ -f ~/.zsh/motd ]; then
-    source ~/.zsh/motd
+if [ -d ~/.zsh ]; then
+    for config (~/.zsh/*) source $config
 fi
 
 # autocompletion for networking tools
