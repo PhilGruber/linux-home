@@ -18,6 +18,6 @@ set strict_threads='yes'
 set sort_browser='reverse-date'
 set sort_aux='last-date-received'
 
-set index_format = "%4C %Z %{%b %d %R} %-20.20L (%6l) %s"
+set index_format = "%Z | %[!%b %d %R] | %-20.20L | %6l | %s"
 
 source ~/.mutt/colours
