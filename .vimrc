@@ -90,3 +90,5 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'
 au BufNewFile,BufRead *.html.twig set filetype=html
 au BufNewFile,BufRead *.schema set filetype=javascript
 
+" To make crontab work
+set backupskip=/tmp/*,/private/tmp/*
