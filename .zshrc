@@ -6,6 +6,8 @@ alias ll="ls -lh"
 alias grep='grep --colour'
 alias gitk='gitk --date-order'
 
+alias phpcheck='for i (**/*.php) php -lq $i | grep -v "^No syntax errors"'
+
 if [[ "`uname`" == "Darwin" ]] {
 	# Mac OS
 	alias ls='ls -G'

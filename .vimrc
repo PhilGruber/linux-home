@@ -92,3 +92,9 @@ au BufNewFile,BufRead *.schema set filetype=javascript
 
 " To make crontab work
 set backupskip=/tmp/*,/private/tmp/*
+
+" syntax checking for PHP
+set makeprg=php\ -l\ %
+set errorformat=%m\ in\ %f\ on\ line\ %l
+map <F7> :make <CR>
+
