@@ -35,8 +35,8 @@ if [[ "`whoami`" == "root" ]] {
     }
 }
 
-export LC_ALL=en_GB.utf-8
-export LANGUAGE=en_GB.utf-8
+export LC_ALL=en_GB.UTF-8
+export LANGUAGE=en_GB.UTF-8
 
 # for "< file.txt"
 PAGER='less -M'
