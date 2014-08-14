@@ -94,6 +94,7 @@ bindkey "$(echotc ku)" history-search-backward
 bindkey "$(echotc kd)" history-search-forward
 bindkey "^[[A"  up-line-or-search       # cursor up
 
+git() { if [[ $@ == "merge testing" ]]; then command echo 'nooooooooooooo!!!!111'; else command git "$@"; fi; }
 
 # print path into title of ?term
 
