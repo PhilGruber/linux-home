@@ -98,3 +98,4 @@ set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
 map <F7> :make <CR><CR>
 
+source ~/.vim/plugin/prettyxml.vim
