@@ -5,6 +5,7 @@ if [[ $SSH_TTY == $TTY ]]; then uptime; fi
 alias ll="ls -lh"
 alias grep='grep --colour'
 alias gitk='gitk --date-order'
+alias nano='vim'
 
 alias phpcheck='for i (**/*.php) php -lq $i | grep -v "^No syntax errors"'
 
@@ -128,7 +129,7 @@ preexec() {
 if [[ `whoami` == 'root' ]]; then logincolor=red; else logincolor=green; fi
 if [[ $SSH_TTY == $TTY ]]; then hostcolor=red; else hostcolor=blue; fi
 
-PS1="[%{$fg[$logincolor]%}%n%{$terminfo[sgr0]%}@%{$fg[$hostcolor]%}%m%{$terminfo[sgr0]%}] %~> " 
+PS1="[%{$fg[$logincolor]%}%n%{$terminfo[sgr0]%}@%{$fg[$hostcolor]%}%m%{$terminfo[sgr0]%}] %~> "
 
 umask 022
 

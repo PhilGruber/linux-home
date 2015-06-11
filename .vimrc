@@ -31,7 +31,7 @@ set hlsearch
 set nocompatible	" Use Vim defaults instead of 100% vi compatibility
 set backspace=indent,eol,start	" more powerful backspacing
 
-" Now we set some defaults for the editor 
+" Now we set some defaults for the editor
 set autoindent		" always set autoindenting on
 set textwidth=0		" Don't wrap words by default
 set nobackup		" Don't keep a backup file
@@ -99,3 +99,4 @@ set errorformat=%m\ in\ %f\ on\ line\ %l
 map <F7> :make <CR><CR>
 
 source ~/.vim/plugin/prettyxml.vim
+source ~/.vim/plugin/fugitive.vim
