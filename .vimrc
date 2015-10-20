@@ -86,7 +86,7 @@ set autowrite		" Automatically save before commands like :next and :make
 
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
- " Custom extensions for syntax highlighting
+" Custom extensions for syntax highlighting
 au BufNewFile,BufRead *.html.twig set filetype=html
 au BufNewFile,BufRead *.schema set filetype=javascript
 
@@ -98,5 +98,12 @@ set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
 map <F7> :make <CR><CR>
 
-source ~/.vim/plugin/prettyxml.vim
-source ~/.vim/plugin/fugitive.vim
+if filereadable("~/.vim/plugin/prettyxml.vim")
+    source ~/.vim/plugin/prettyxml.vim
+endif
+
+if filereadable("~/.vim/plugin/fugitive.vim")
+    source ~/.vim/plugin/fugitive.vim
+endif
+
+" source ~/.vim/bundle/vim-twig/filetype.vim
