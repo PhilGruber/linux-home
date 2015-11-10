@@ -36,6 +36,16 @@ if [[ "`whoami`" == "root" ]] {
     }
 }
 
+function merge-to {
+    myBranch=`git status | grep 'On branch' | cut -d' ' -f3`
+    dstBranch=$1
+    git checkout $dstBranch
+    git pull
+    git merge -m $myBranch
+    git push
+    git checkout $myBranch
+}
+
 export LC_ALL=en_GB.UTF-8
 export LANGUAGE=en_GB.UTF-8
 
@@ -71,7 +81,7 @@ zstyle ':completion:*:cp:*' ignore-line yes
 zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion::complete:*' cache-path ~/.zsh/cache/$HOST
 
-# tuning for tools that I use a lot 
+# tuning for tools that I use a lot
 zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*.(o|pdf|ps|aux)'
 compdef '_files -g "*.(pdf|ps)"' evince
 
