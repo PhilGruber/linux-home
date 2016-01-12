@@ -7,6 +7,8 @@ alias grep='grep --colour'
 alias gitk='gitk --date-order'
 alias nano='vim'
 
+alias fixdashboard="ssh pi@raspberry.dev 'sudo reboot'"
+
 alias phpcheck='for i (**/*.php) php -lq $i | grep -v "^No syntax errors"'
 
 if [[ "`uname`" == "Darwin" ]] {
@@ -41,9 +43,18 @@ function merge-to {
     dstBranch=$1
     git checkout $dstBranch
     git pull
-    git merge -m $myBranch
+    git merge --no-edit $myBranch
     git push
     git checkout $myBranch
+}
+
+function syupd {
+    git checkout master
+    git pull --rebase
+    ./composer.phar install
+    app/console doctrine:schema:update --force
+    app/console assets:install
+    app/console assetic:dump
 }
 
 export LC_ALL=en_GB.UTF-8
