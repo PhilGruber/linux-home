@@ -52,9 +52,9 @@ function syupd {
     git checkout master
     git pull --rebase
     ./composer.phar install
-    app/console doctrine:schema:update --force
-    app/console assets:install
-    app/console assetic:dump
+    bin/console doctrine:schema:update --force
+    bin/console assets:install
+    bin/console assetic:dump
 }
 
 export LC_ALL=en_GB.UTF-8
