@@ -26,6 +26,11 @@ if [[ "`uname`" == "Darwin" ]] {
 
 }
 
+if [[ -f ~/.Xmodmap ]] {
+    xmodmap ~/.Xmodmap
+}
+
+
 if [[ "`whoami`" == "root" ]] {
 	if [[ "`uname`" == "Darwin" ]] {
         alias as='port search --line'
