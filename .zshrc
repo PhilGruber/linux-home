@@ -26,8 +26,10 @@ if [[ "`uname`" == "Darwin" ]] {
 
 }
 
-if [[ -f ~/.Xmodmap ]] {
-    xmodmap ~/.Xmodmap
+if [[ $SSH_TTY != $TTY ]] {
+    if [[ -f ~/.Xmodmap ]] {
+        xmodmap ~/.Xmodmap
+    }
 }
 
 
