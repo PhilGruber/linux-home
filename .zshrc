@@ -11,11 +11,19 @@ alias fixdashboard="ssh pi@raspberry.dev 'sudo reboot'"
 
 alias phpcheck='for i (**/*.php) php -lq $i | grep -v "^No syntax errors"'
 
+alias composer='php composer.phar'
+
 if [[ "`uname`" == "Darwin" ]] {
 	# Mac OS
 	alias ls='ls -G'
 
 } else {
+
+    if [[ $SSH_TTY != $TTY ]] {
+        if [[ -f ~/.Xmodmap ]] {
+            xmodmap ~/.Xmodmap
+        }
+    }
 
 	alias ls='ls --color=auto'
 	if [ -f ~/.dircolors ]; then
@@ -24,12 +32,6 @@ if [[ "`uname`" == "Darwin" ]] {
 	    eval `dircolors`
 	fi
 
-}
-
-if [[ $SSH_TTY != $TTY ]] {
-    if [[ -f ~/.Xmodmap ]] {
-        xmodmap ~/.Xmodmap
-    }
 }
 
 
