@@ -37,6 +37,7 @@ if [[ "`uname`" == "Darwin" ]] {
     alias as='brew search'
     alias ai='brew install'
     alias ad='brew info'
+    gitUpdate=`stat -f '%m' .git/FETCH_HEAD`
 
 } else {
     if [[ "`whoami`" == "root" ]] {
@@ -44,6 +45,15 @@ if [[ "`uname`" == "Darwin" ]] {
         alias ai='apt-get install'
         alias ad='apt-cache show'
     }
+
+    gitUpdate=`stat -c %Y .git/FETCH_HEAD`
+}
+
+now=`date '+%s'`
+gitAge=`echo "($now - $gitUpdate)/3600/24" | bc`
+
+if [[ $gitAge > 28 ]] {
+    git pull
 }
 
 function merge-to {
