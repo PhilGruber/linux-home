@@ -7,11 +7,9 @@ alias grep='grep --colour'
 alias gitk='gitk --date-order'
 alias nano='vim'
 
-alias fixdashboard="ssh pi@raspberry.dev 'sudo reboot'"
-
 alias phpcheck='for i (**/*.php) php -lq $i | grep -v "^No syntax errors"'
 
-alias composer='php composer.phar'
+alias sf="bin/console"
 
 if [[ "`uname`" == "Darwin" ]] {
 	# Mac OS
@@ -35,12 +33,13 @@ if [[ "`uname`" == "Darwin" ]] {
 }
 
 
-if [[ "`whoami`" == "root" ]] {
-	if [[ "`uname`" == "Darwin" ]] {
-        alias as='port search --line'
-        alias ai='port install'
-        alias ad='port info'
-    } else {
+if [[ "`uname`" == "Darwin" ]] {
+    alias as='brew search'
+    alias ai='brew install'
+    alias ad='brew info'
+
+} else {
+    if [[ "`whoami`" == "root" ]] {
         alias as='apt-cache search'
         alias ai='apt-get install'
         alias ad='apt-cache show'
@@ -60,7 +59,7 @@ function merge-to {
 function syupd {
     git checkout master
     git pull --rebase
-    ./composer.phar install
+    composer install
     bin/console doctrine:schema:update --force
     bin/console assets:install
     bin/console assetic:dump
