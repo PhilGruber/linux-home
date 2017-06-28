@@ -23,7 +23,7 @@ if [[ "`uname`" == "Darwin" ]] {
 } else {
     # Linux
 
-    if [[ $SSH_TTY != $TTY ]] {
+    if [[ -z "$SSH_CLIENT$SSH_TTY" ]] {
         if [[ -f ~/.Xmodmap ]] {
             xmodmap ~/.Xmodmap
         }
