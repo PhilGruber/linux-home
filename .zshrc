@@ -15,9 +15,15 @@ if [[ "`uname`" == "Darwin" ]] {
 	# Mac OS
 	alias ls='ls -G'
 
-} else {
+    alias as='brew search'
+    alias ai='brew install'
+    alias ad='brew info'
+    gitUpdate=`stat -f '%m' .git/FETCH_HEAD`
 
-    if [[ $SSH_TTY != $TTY ]] {
+} else {
+    # Linux
+
+    if [[ -z "$SSH_CLIENT$SSH_TTY" ]] {
         if [[ -f ~/.Xmodmap ]] {
             xmodmap ~/.Xmodmap
         }
@@ -30,31 +36,24 @@ if [[ "`uname`" == "Darwin" ]] {
 	    eval `dircolors`
 	fi
 
-}
+    gitUpdate=`stat -c %Y .git/FETCH_HEAD`
 
-
-if [[ "`uname`" == "Darwin" ]] {
-    alias as='brew search'
-    alias ai='brew install'
-    alias ad='brew info'
-    gitUpdate=`stat -f '%m' .git/FETCH_HEAD`
-
-} else {
     if [[ "`whoami`" == "root" ]] {
         alias as='apt-cache search'
         alias ai='apt-get install'
         alias ad='apt-cache show'
     }
 
-    gitUpdate=`stat -c %Y .git/FETCH_HEAD`
 }
 
-now=`date '+%s'`
-gitAge=`echo "($now - $gitUpdate)/3600/24" | bc`
+if [[ "`whoami`" != "root" ]] {
+    now=`date '+%s'`
+    gitAge=`echo "($now - $gitUpdate)/3600/24" | bc`
 
-if [[ $gitAge > 28 ]] {
-    echo 'Config files have not been updated for 28 days. Updating...'
-    git pull
+    if [[ $gitAge > 28 ]] {
+        echo 'Config files have not been updated for 28 days. Updating...'
+        git pull
+    }
 }
 
 function merge-to {
