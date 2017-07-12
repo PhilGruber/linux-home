@@ -36,12 +36,12 @@ if [[ "`uname`" == "Darwin" ]] {
 	    eval `dircolors`
 	fi
 
-    gitUpdate=`stat -c %Y .git/FETCH_HEAD`
-
     if [[ "`whoami`" == "root" ]] {
         alias as='apt-cache search'
         alias ai='apt-get install'
         alias ad='apt-cache show'
+    } else {
+        gitUpdate=`stat -c %Y .git/FETCH_HEAD`
     }
 
 }
