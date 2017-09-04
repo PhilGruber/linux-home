@@ -18,7 +18,7 @@ if [[ "`uname`" == "Darwin" ]] {
     alias as='brew search'
     alias ai='brew install'
     alias ad='brew info'
-    gitUpdate=`stat -f '%m' .git/FETCH_HEAD`
+    gitUpdate=`stat -f '%m' ~/.git/FETCH_HEAD`
 
 } else {
     # Linux
@@ -41,7 +41,7 @@ if [[ "`uname`" == "Darwin" ]] {
         alias ai='apt-get install'
         alias ad='apt-cache show'
     } else {
-        gitUpdate=`stat -c %Y .git/FETCH_HEAD`
+        gitUpdate=`stat -c %Y ~/.git/FETCH_HEAD`
     }
 
 }
