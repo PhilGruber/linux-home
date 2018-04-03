@@ -97,6 +97,7 @@ set backupskip=/tmp/*,/private/tmp/*
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
 map <F7> :make <CR><CR>
+map <F8> :Phpcs <CR><CR>
 
 if filereadable("~/.vim/plugin/prettyxml.vim")
     source ~/.vim/plugin/prettyxml.vim
@@ -104,6 +105,15 @@ endif
 
 if filereadable("~/.vim/plugin/fugitive.vim")
     source ~/.vim/plugin/fugitive.vim
+endif
+
+if filereadable("~/.vim/plugin/phpcs.vim")
+    source ~/.vim/plugin/phpcs.vim
+endif
+
+if filereadable("~/.vim/plugin/phpfmt.vim")
+"    source ~/.vim/plugin/phpfmt.vim
+"    let g:phpfmt_autosave = 0
 endif
 
 " source ~/.vim/bundle/vim-twig/filetype.vim
