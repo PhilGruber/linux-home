@@ -48,7 +48,7 @@ if [[ "`uname`" == "Darwin" ]] {
 
 if [[ "`whoami`" != "root" ]] {
     now=`date '+%s'`
-    gitAge=`echo "($now - $gitUpdate)/3600/24" | bc`
+    gitAge=`echo "$((($now - $gitUpdate)/3600/24))"`
 
     if [[ $gitAge > 28 ]] {
         echo 'Config files have not been updated for 28 days. Updating...'
