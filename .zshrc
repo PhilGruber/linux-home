@@ -2,6 +2,8 @@ autoload colors; colors
 
 if [[ $SSH_TTY == $TTY ]]; then uptime; fi
 
+path+=("/home/`whoami`/.local/bin")
+
 alias ll="ls -lh"
 alias grep='grep --colour'
 alias gitk='gitk --date-order'
@@ -179,3 +181,4 @@ mkcd() { mkdir -p $1; cd $1 }
 # to execute chpwd() on login
 cd .
 
+export PATH
