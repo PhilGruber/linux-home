@@ -184,3 +184,6 @@ mkcd() { mkdir -p $1; cd $1 }
 cd .
 
 export PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
