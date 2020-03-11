@@ -3,6 +3,7 @@ autoload colors; colors
 if [[ $SSH_TTY == $TTY ]]; then uptime; fi
 
 path+=("/home/`whoami`/.local/bin")
+path+=("/home/`whoami`/go/bin")
 
 alias ll="ls -lh"
 alias grep='grep --colour'
