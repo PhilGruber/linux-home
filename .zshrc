@@ -53,8 +53,8 @@ if [[ "`whoami`" != "root" ]] {
     now=`date '+%s'`
     gitAge=$((($now - $gitUpdate)/3600/24))
 
-    if [[ $gitAge > 28 ]] {
-        echo 'Config files have not been updated for 28 days. Updating...'
+    if [[ $gitAge -gt 28 ]] {
+        echo "Config files have not been updated for $gitAge days. Updating..."
         git pull
         touch ~/.git/FETCH_HEAD
     }
