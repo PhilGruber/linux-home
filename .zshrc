@@ -4,6 +4,7 @@ if [[ $SSH_TTY == $TTY ]]; then uptime; fi
 
 path+=("/home/`whoami`/.local/bin")
 path+=("/home/`whoami`/go/bin")
+path+=("/home/`whoami`/.config/composer/vendor/bin")
 
 alias ll="ls -lh"
 alias grep='grep --colour'
