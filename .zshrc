@@ -5,6 +5,8 @@ if [[ $SSH_TTY == $TTY ]]; then uptime; fi
 path+=("/home/`whoami`/.local/bin")
 path+=("/home/`whoami`/go/bin")
 
+fpath+=(~/.zsh/completion)
+
 alias ll="ls -lh"
 alias grep='grep --colour'
 alias gitk='gitk --date-order'
