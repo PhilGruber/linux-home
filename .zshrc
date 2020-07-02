@@ -23,7 +23,7 @@ if [[ "`uname`" == "Darwin" ]] {
     alias as='brew search'
     alias ai='brew install'
     alias ad='brew info'
-    gitUpdate=`stat -f '%m' ~/.git/HEAD`
+    gitUpdate=`stat -f '%m' ~/.git/FETCH_HEAD`
 
 } else {
     # Linux
