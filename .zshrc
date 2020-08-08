@@ -6,6 +6,8 @@ path+=("/home/`whoami`/.local/bin")
 path+=("/home/`whoami`/go/bin")
 path+=("/home/`whoami`/.config/composer/vendor/bin")
 
+fpath+=(~/.zsh/completion)
+
 alias ll="ls -lh"
 alias grep='grep --colour'
 alias gitk='gitk --date-order'
@@ -22,7 +24,7 @@ if [[ "`uname`" == "Darwin" ]] {
     alias as='brew search'
     alias ai='brew install'
     alias ad='brew info'
-    gitUpdate=`stat -f '%m' ~/.git/HEAD`
+    gitUpdate=`stat -f '%m' ~/.git/FETCH_HEAD`
 
 } else {
     # Linux
