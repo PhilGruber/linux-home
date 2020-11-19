@@ -32,10 +32,12 @@ MiscShowRelaunchDialog=TRUE
 MiscRewrapOnResize=TRUE
 MiscUseShiftArrowsToScroll=FALSE
 MiscSlimTabs=FALSE
-MiscNewTabAdjacent=FALSE
+MiscNewTabAdjacent=TRUE
 MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=TRUE
 TabActivityColor=#0f4999
 FontUseSystem=TRUE
 ColorSelectionBackground=#000000000000
+UseDefaultWorkingDir=TRUE
+DefaultWorkingDir=~
 
