@@ -13,7 +13,7 @@ _symfony2 () {
 }
 
 compdef _symfony2 '`_symfony_console`'
-compdef _symfony2 'bin/console'
+compdef _symfony2 'app/console'
 compdef _symfony2 sf
 
 #Alias
