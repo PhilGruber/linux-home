@@ -40,4 +40,5 @@ FontUseSystem=TRUE
 ColorSelectionBackground=#000000000000
 UseDefaultWorkingDir=TRUE
 DefaultWorkingDir=~
+ScrollingLines=2000
 
