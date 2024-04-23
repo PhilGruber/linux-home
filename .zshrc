@@ -2,9 +2,13 @@ autoload colors; colors
 
 if [[ $SSH_TTY == $TTY ]]; then uptime; fi
 
-path+=("/home/`whoami`/.local/bin")
-path+=("/home/`whoami`/go/bin")
-path+=("/home/`whoami`/.config/composer/vendor/bin")
+home='home'
+if [[ "`uname`" == "Darwin" ]] {
+    home='Users'
+}
+path+=("/$home/`whoami`/.local/bin")
+path+=("/$home/`whoami`/go/bin")
+path+=("/$home/`whoami`/.config/composer/vendor/bin")
 
 fpath+=(~/.zsh/completion)
 
