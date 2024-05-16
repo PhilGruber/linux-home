@@ -77,6 +77,15 @@ function merge-to {
     git checkout $myBranch
 }
 
+function merge-from {
+    myBranch=`git status | grep 'On branch' | cut -d' ' -f3`
+    dstBranch=$1
+    git checkout $dstBranch
+    git pull
+    git checkout $myBranch
+    git merge $dstBranch
+}
+
 function syupd {
     git checkout master
     git pull --rebase
