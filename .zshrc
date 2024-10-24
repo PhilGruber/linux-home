@@ -82,8 +82,9 @@ function syupd {
     bin/console assetic:dump
 }
 
-export LC_ALL=en_GB.UTF-8
-export LANGUAGE=en_GB.UTF-8
+export LC_ALL=en_AU.UTF-8
+export LANGUAGE=en_AU.UTF-8
+export LC_CTYPE=en_AU.UTF-8
 
 # for "< file.txt"
 PAGER='less -M'
