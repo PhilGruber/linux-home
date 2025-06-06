@@ -25,6 +25,7 @@ syntax on
 set fileencodings=utf-8
 
 set hlsearch
+set gfn=Cousine\ 10
 
 " Normally we use vim-extensions. If you want true vi-compatibility
 " remove change the following statements
@@ -117,3 +118,9 @@ if filereadable("~/.vim/plugin/phpfmt.vim")
 endif
 
 " source ~/.vim/bundle/vim-twig/filetype.vim
+
+set enc=utf-8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,utf8,prc
+set guifont=Cousine\ 10
+set guifontwide=Cousine\ 10
