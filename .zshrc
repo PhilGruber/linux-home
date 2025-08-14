@@ -84,7 +84,7 @@ function merge-from {
     git checkout $dstBranch
     git pull
     git checkout $myBranch
-    git merge $dstBranch
+    git merge --no-edit $dstBranch
 }
 
 function syupd {
